@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userSQL">
+	<!-- UserDTO의 필드와 테이블의 컬럼명이 틀린 경우 -->
+	<resultMap type="user.bean.UserDTO" id="userResult">
+		<result property="name" column="NAME"/>
+		<result property="id" column="ID"/>
+		<result property="pwd" column="PWD"/>
+	</resultMap>
+
+	<insert id="write" parameterType="user">
+		insert into usertable values(#{name}, #{id}, #{pwd})
+	</insert>
+	
+	<select id="getUserList" resultMap="userResult">
+		select * from usertable
+	</select>
+	
+	<select id="getUser" parameterType="java.lang.String" resultType="user">
+		select * from usertable where id=#{id}
+	</select>
+	
+	<update id="update" parameterType="java.util.Map">
+		update usertable set name=#{name}, pwd=#{pwd} where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from usertable where id=#{id} <!-- MySQL에서는 반드시 from을 써야 한다. -->
+	</delete>
+	
+	<select id="search" parameterType="java.util.Map" resultType="user">
+		<!-- XML -->
+		<!-- 
+		select * from usertable where 
+		<if test="columnName == 'name'">
+			name like concat('%', #{value}, '%')
+		</if>
+		<if test="columnName == 'id'">
+			id like concat('%', #{value}, '%')
+		</if> -->
+		
+		<!-- 
+		select * from usertable where 
+		<choose>
+			<when test="columnName == 'name'">
+				name like concat('%', #{value}, '%')
+			</when>
+			<otherwise>
+				id like concat('%', #{value}, '%')
+			</otherwise>
+		</choose> -->
+		
+		select * from usertable where ${columnName} like concat('%', #{value}, '%')
+		
+	</select>
+
+</mapper>
+
+<!-- 
+Oracle - 연결연산자(||)
+       - concat(인수, 인수) => 인수는 2개만 
+select * from usertable where ${searchOption} like '%' || #{keyword} || '%'
+
+MySQL - 연결연산자(||) 없다
+      - concat(인수, 인수) => 인수는 2개 이상 써도 된다 
+select * from usertable where ${searchOption} like concat('%', #{keyword}, '%')
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

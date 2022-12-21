@@ -1,0 +1,21 @@
+INDEX VERSION 1.131
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3911726010.index
+\Chapter02_Oracle\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\270925408.index
+\Chapter03_MySQL\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\781286327.index
+\Chapter04_MySQL_YML\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2518533253.index
+\Chapter02_Oracle\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2115630320.index
+\Chapter04_MySQL_YML\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\484006913.index
+\Chapter03_MySQL\src\main\java
+D:\springboot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1596128945.index
+\Chapter06_JPA\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1596128945.index
+\Chapter06_JPA\src\main\java
+D:\springboot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3672264615.index
+\Chapter06_JPA\src\main\java
+D:\spring boot\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3672264615.index
+\Chapter06_JPA\src\main\java
