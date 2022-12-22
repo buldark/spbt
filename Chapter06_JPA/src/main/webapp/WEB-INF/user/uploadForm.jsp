@@ -58,7 +58,10 @@ $('#uploadBtn').click(function(){
  
 
 <!-- 2. AJax 통신 -->
-<form id="uploadForm">
+<form id="uploadForm"> =
+	
+	
+	      
 	
 	<!-- 업로드 버튼을 누르기 전에 카메라 아이콘을 통해서 선택한 이미지가 맞는지 확인하기 위해서 이미지를 보이게 한다.-->
 	<img id="showImg" width="300" height="300">

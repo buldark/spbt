@@ -10,17 +10,20 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;//내장 톰캣 사용 / 외장 톰캣- 
 
-
-@Controller
+@CrossOrigin
+@RestController
 @RequestMapping(value="user")
 public class UserController2 {
 	
@@ -136,10 +139,10 @@ public class UserController2 {
 	//produces="text/html; charset=UTF-8"한글 안깨지게
 //name= "img" 1개일 경우	
 		@PostMapping(value="upload2", produces="text/html; charset=UTF-8" )
-		@ResponseBody
-		public String upload2(@RequestParam MultipartFile img, HttpSession session) {
+		@ResponseBody			//@requestparam도 가능
+		public String upload2(@RequestBody MultipartFile img, HttpSession session) {
 			//실제폴더
-			String filePath = session.getServletContext().getRealPath("/storage");
+			String filePath = session.getServletContext().getRealPath("/public/storage");
 			String fileName = img.getOriginalFilename();//파일이름 가져와
 			System.out.println("실제폴더 = " + filePath);		
 				
@@ -153,7 +156,7 @@ public class UserController2 {
 				e.printStackTrace();
 			} 
 				
-			return "<img src='../storage/" + fileName + "' width='300' height='300' />";
+			return "../storage/" + fileName;
 				
 				
 		}
